@@ -68,7 +68,7 @@ static void F77_SUB(calcf) (int *pq, double *p, int *nf, double *f, int *uiparm,
      /* compute negative log likelihood apart from the constant and the pre-sample values */
 {
   int i, j, ok;
-  int maxpq = DMAX(garch_h.p,garch_h.q); 
+  int maxpq = (int) DMAX(garch_h.p,garch_h.q); 
   double temp = 0.0;
   double sum = 0.0;
   
@@ -99,7 +99,7 @@ static void F77_SUB(calcg) (int *pq, double *p, int *nf, double *dp, int *uiparm
      /* compute derivative of negative log likelihood */
 {
   int i, j, k;
-  int maxpq = DMAX(garch_h.p,garch_h.q); 
+  int maxpq = (int) DMAX(garch_h.p,garch_h.q); 
   double temp1, temp2, temp3;
   
   for (k=0; k<(*pq); k++)  /* initialize */
@@ -175,13 +175,13 @@ void tseries_fit_garch (double *y, int *n, double *par, int *p, int *q,
   
   /* set up general optimizer parameters to default values */ 
   pq = (*p)+(*q)+1; 
-  d = Calloc (pq, double);
+  d = R_Calloc (pq, double);
   for (i=0; i<pq; i++)
     d[i] = 1.0;
   liv = 60;
-  iv = Calloc (liv, int);
+  iv = R_Calloc (liv, int);
   lv = 77+pq*(pq+17)/2;
-  v = Calloc (lv, double);
+  v = R_Calloc (lv, double);
   alg = 2;  
   F77_CALL(ddeflt) (&alg, iv, &liv, &lv, v);
   iv[0] = 12;  
@@ -200,13 +200,13 @@ void tseries_fit_garch (double *y, int *n, double *par, int *p, int *q,
   
   /* set handler values */
   garch_h.p = (*p); garch_h.q = (*q); garch_h.n = (*n); garch_h.y = y;  
-  garch_h.h = Calloc ((*n), double); 
-  garch_h.dh = Calloc ((*n)*pq, double);
+  garch_h.h = R_Calloc ((*n), double); 
+  garch_h.dh = R_Calloc ((*n)*pq, double);
   var = 0.0;
   for (i=0; i<(*n); i++)  /* estimate unconditional variance (uv) */
     var += DSQR(y[i]);
   var /= (double) (*n); 
-  for (i=0; i<DMAX((*p),(*q)); i++)  /* initialize */
+  for (i=0; i<(int)DMAX((*p),(*q)); i++)  /* initialize */
   {
     garch_h.h[i] = var;  /* with uv */
     garch_h.dh[pq*i] = 1.0;  /* dh_i/dp_0 with 1 */
@@ -233,11 +233,11 @@ void tseries_fit_garch (double *y, int *n, double *par, int *p, int *q,
   (*fret) = v[9];
 
   /* free memory */
-  Free (d);
-  Free (iv); 
-  Free (v);
-  Free (garch_h.h);
-  Free (garch_h.dh);
+  R_Free (d);
+  R_Free (iv); 
+  R_Free (v);
+  R_Free (garch_h.h);
+  R_Free (garch_h.dh);
 }
 
 
@@ -262,7 +262,7 @@ void tseries_pred_garch (double *y, double *h, int *n, double *par,
   
   if (*genuine) N = (*n)+1;
   else N = (*n);
-  maxpq = DMAX((*p),(*q));
+  maxpq = (int)DMAX((*p),(*q));
   var = 0.0;
   for (i=1; i<=(*p)+(*q); i++)  /* compute uv */
     var += par[i];
@@ -303,14 +303,14 @@ void tseries_ophess_garch (double *y, int *n, double *par, double *he,
   double *h, *dh, *dpar;
   
   pq = (*p)+(*q)+1; 
-  h = Calloc ((*n), double); 
-  dh = Calloc ((*n)*pq, double);
-  dpar = Calloc (pq, double);
+  h = R_Calloc ((*n), double); 
+  dh = R_Calloc ((*n)*pq, double);
+  dpar = R_Calloc (pq, double);
   var = 0.0;
   for (i=0; i<(*n); i++)  /* estimate uv */
     var += DSQR(y[i]);
   var /= (double) (*n); 
-  for (i=0; i<DMAX((*p),(*q)); i++)  /* initialize */
+  for (i=0; i<(int)DMAX((*p),(*q)); i++)  /* initialize */
   {
     h[i] = var;  /* with uv */
     dh[pq*i] = 1.0;  /* dh_i/dp_0 with 1 */
@@ -320,7 +320,7 @@ void tseries_ophess_garch (double *y, int *n, double *par, double *he,
   for (k=0; k<pq; k++)  /* initialize */
     for (j=0; j<pq; j++)
       he[pq*k+j] = 0.0;
-  for (i=DMAX((*p),(*q)); i<(*n); i++)  /* loop over time */
+  for (i=(int)DMAX((*p),(*q)); i<(*n); i++)  /* loop over time */
   {                                   /* compute cv at time i and derivatives dh_i/dp_j */
     temp1 = par[0];  /* compute ARCH part of cv */
     for (j=1; j<=(*q); j++)
@@ -354,8 +354,8 @@ void tseries_ophess_garch (double *y, int *n, double *par, double *he,
       for (j=0; j<pq; j++)
 	he[pq*k+j] += dpar[k]*dpar[j];
   }
-  Free (h);
-  Free (dh);
-  Free (dpar);
+  R_Free (h);
+  R_Free (dh);
+  R_Free (dpar);
 }
 
