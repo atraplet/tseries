@@ -43,6 +43,9 @@
   classical linear regression. 
   
   Missing values are not allowed.
+
+  Note that this test uses randomly generated neural network weights, so
+  results are only reproducible when using the same seed.
 }
 \value{
   A list with class \code{"htest"} containing the following components:
