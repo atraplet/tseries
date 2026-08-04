@@ -47,9 +47,7 @@
   \item{arguments}{additional arguments used to compute the test statistic.}
 }
 \references{
-  T. Teraesvirta, C. F. Lin, and C. W. J. Granger (1993): Power of the
-  Neural Network Linearity Test. \emph{Journal of Time Series Analysis}
-  14, 209-220.
+  \bibshow{Teräsvirta+Lin+Granger:1993}
 }
 \author{A. Trapletti}
 \seealso{

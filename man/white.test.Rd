@@ -43,6 +43,9 @@
   classical linear regression. 
   
   Missing values are not allowed.
+
+  Note that this test uses randomly generated neural network weights, so
+  results are only reproducible when using the same seed.
 }
 \value{
   A list with class \code{"htest"} containing the following components:
@@ -56,9 +59,7 @@
   \item{arguments}{additional arguments used to compute the test statistic.}
 }
 \references{
-  T. H. Lee, H. White, and C. W. J. Granger (1993): Testing for
-  neglected nonlinearity in time series models. \emph{Journal of
-  Econometrics} \bold{56}, 269-290.
+  \bibshow{Lee+White+Granger:1993}
 }
 \author{A. Trapletti}
 \seealso{
