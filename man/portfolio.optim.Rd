@@ -8,9 +8,11 @@
   in the mean-variance sense.
 }
 \usage{
+portfolio.optim(x, ...)
 \method{portfolio.optim}{default}(x, pm = mean(x), riskless = FALSE,
                 shorts = FALSE, rf = 0.0, reslow = NULL, reshigh = NULL,
                 covmat = cov(x), \dots)
+\method{portfolio.optim}{ts}(x, ...)
 }
 \arguments{
   \item{x}{a numeric matrix or multivariate time series consisting of a

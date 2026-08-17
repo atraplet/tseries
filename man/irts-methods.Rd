@@ -23,6 +23,8 @@
 \method{time}{irts}(x, \dots)
 \method{value}{irts}(x, \dots)
 \method{[}{irts}(x, i, j, \dots)
+
+value(x, ...)
 }
 \arguments{
   \item{x}{an object of class \code{"irts"}; usually, a result 

@@ -1,5 +1,5 @@
-f5258331ba61edce988a8824f1d2404c *ChangeLog
-8d90e38dcd2b1b7db7b529e1cf050369 *DESCRIPTION
+824b0c5fbccf2d8704d670870fb5412b *ChangeLog
+37aa1a35d3309974ad861115147a5359 *DESCRIPTION
 cdc8894457c6efd2f1e49cfa79272d7b *NAMESPACE
 06290f3ea287a06d96e34079acdbf807 *R/arma.R
 dc4e8457ecf24346fee6bd8a1b4a2687 *R/finance.R
@@ -9,7 +9,7 @@ decf4a3134c069cf9d2dbc79b1b60706 *R/irts.R
 9db11950b82d51c34320a7baea82bd52 *R/tsutils.R
 6474314852bc0951b0cc3848febd98dc *R/zzz.R
 5e4d9899b4d9967986461369024bd0bf *README
-7a0ff3e7596f6fd8e86b5ac7ac3efec4 *build/partial.rdb
+4755ee7f50bbdee0a13ab38420b3d56d *build/partial.rdb
 bce0be710e9bf422369fb005e1ce9eda *data/NelPlo.rda
 113a1ec4f0d0cb6370e6e03de653f78e *data/USeconomic.rda
 ad6065add4b802dba91c55a255e067bf *data/bev.rda
@@ -32,7 +32,7 @@ b9275eac11b50a94441e6bd93f812dc9 *man/garch.Rd
 c22acb9192d7e819848cb71a08fc04c9 *man/get.hist.quote.Rd
 ab55c3d3a54132289f9cdb5f9025d571 *man/ice.river.Rd
 a6cbcad093fb530e27bf50ed3446d935 *man/irts-functions.Rd
-82628e1b908072d5572db16d8d4fd2fa *man/irts-methods.Rd
+7392351f51ba93a5c4caeddee8f77083 *man/irts-methods.Rd
 98a04ff66d5647b616d4957e316b0011 *man/irts.Rd
 b9e89c6605379e5961913c3d61bed6a1 *man/jarque.bera.test.Rd
 2174737b06dfcf042ecb9a2a9ea0582e *man/kpss.test.Rd
@@ -41,7 +41,7 @@ df57497fe0c4420af39d4372edbd0e4a *man/na.remove.Rd
 8b1ad34100f18edcd9a81c22ff7cabf9 *man/nino.Rd
 32d4b5b2e3866dddb511432a5fa82082 *man/plotOHLC.Rd
 e1e539b59ea40d37a01cf6fcfb32356d *man/po.test.Rd
-8cead42149fc04f52b57083ecaf2e62b *man/portfolio.optim.Rd
+409bb0a3ac0fe6693c5a426831de093f *man/portfolio.optim.Rd
 30eeddf49fbac8d4f5dae05848da145f *man/pp.test.Rd
 63abbd22859186fe414d4925b07c1f8a *man/quadmap.Rd
 45d3e3dba09d59ab456af5ce708cd22d *man/read.matrix.Rd
@@ -55,9 +55,9 @@ dea09ebef7f99803d091506c850dd8d0 *man/summary.garch.Rd
 20df9b91298fd2508ac2de4c4fa4758a *man/surrogate.Rd
 a251dc6cdf0c63f3ced72f26d0282b7a *man/tcm.Rd
 173b8da44c209a388a4ade20f293d272 *man/tcmd.Rd
-922cf731bb67f08ab0fe4457b9e2f36f *man/terasvirta.test.Rd
+d58172e0220ab20013ddae93eafeac9e *man/terasvirta.test.Rd
 29167a91df0154b936aaa959560f5ec6 *man/tsbootstrap.Rd
-9afd1a02af1585627f389849f781cc24 *man/white.test.Rd
+543b93096b5b6ee875c71370504ca178 *man/white.test.Rd
 2fa4c7011c2bc0f7449ae151d5cc44ae *src/Makevars
 3b89f280404ab59ecff6d2e36d8e68a4 *src/arma.c
 6f5325ce1373b88a04cf55bc9c5854c4 *src/bdstest.c

@@ -9,6 +9,7 @@
   \code{y~x}.
 }
 \usage{
+terasvirta.test(x, ...)
 \method{terasvirta.test}{ts}(x, lag = 1, type = c("Chisq","F"),
                 scale = TRUE, \dots)
 \method{terasvirta.test}{default}(x, y, type = c("Chisq","F"),

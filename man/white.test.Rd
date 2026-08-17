@@ -9,6 +9,7 @@
   \code{y~x}.
 }
 \usage{
+white.test(x, ...)
 \method{white.test}{ts}(x, lag = 1, qstar = 2, q = 10, range = 4, 
             type = c("Chisq","F"), scale = TRUE, \dots)
 \method{white.test}{default}(x, y, qstar = 2, q = 10, range = 4,
